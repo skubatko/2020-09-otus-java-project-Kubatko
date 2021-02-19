@@ -7,3 +7,8 @@ spring:
 
   main:
     lazy-initialization: true
+
+app:
+  telegram-bot:
+    name:
+    token:

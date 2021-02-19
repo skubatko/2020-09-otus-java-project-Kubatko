@@ -5,6 +5,11 @@ spring:
   application:
     name: atm-lookup-service
 
+app:
+  telegram-bot:
+    name:
+    token:
+
 management:
   endpoints:
     web:
@@ -14,7 +19,6 @@ management:
           - info
           - metrics
           - prometheus
-          - hystrix.stream
   endpoint:
     metrics:
       enabled: true
