@@ -1,0 +1,159 @@
+{
+  "atms": [
+    {
+      "address": {
+        "city": "Nupkadaz",
+        "location": "http://cobak.vn/dozdanov",
+        "mode": "KLADR"
+      },
+      "addressComments": "380 Moepa View",
+      "availablePaymentSystems": [
+        "diduzatu",
+        "supo",
+        "ohiz"
+      ],
+      "cashInCurrencies": [
+        "okeca",
+        "degadho",
+        "misdosi"
+      ],
+      "cashOutCurrencies": [
+        "kojusocv",
+        "ipoi",
+        "didusob"
+      ],
+      "coordinates": {
+        "latitude": "-2.39189",
+        "longitude": "29.08016"
+      },
+      "deviceId": 33503080,
+      "nfc": "amzemuzep",
+      "publicAccess": "5610899175373741",
+      "recordUpdated": "2003-05-06T01:09:04.362Z",
+      "services": {
+        "cardCashIn": "sasd",
+        "cardCashOut": "zumpib",
+        "cardPayments": "cawmoddo",
+        "cashIn": "lofeho",
+        "cashOut": "zemcuhipiwmejo",
+        "payments": "atelacit"
+      },
+      "supportInfo": {
+        "email": "hesoela@ravod.sa",
+        "other": "newlotictajane",
+        "phone": "(862) 932-6015"
+      },
+      "timeAccess": {
+        "mode": "noinfo",
+        "schedule": "umekutimanw"
+      },
+      "timeShift": 63317457
+    },
+    {
+      "address": {
+        "city": "Vawufvev",
+        "location": "http://gi.om/tewmod",
+        "mode": "OtherDictionary"
+      },
+      "addressComments": "1317 Dava Path",
+      "availablePaymentSystems": [
+        "hogedi",
+        "hucluj",
+        "cihwu"
+      ],
+      "cashInCurrencies": [
+        "wemse",
+        "bigtiro",
+        "pasa"
+      ],
+      "cashOutCurrencies": [
+        "zufotena",
+        "efcoc",
+        "fiwdop"
+      ],
+      "coordinates": {
+        "latitude": "8.47936",
+        "longitude": "113.03696"
+      },
+      "deviceId": 52234201,
+      "nfc": "ricegenrars",
+      "publicAccess": "201482474429104",
+      "recordUpdated": "2010-07-03T18:40:03.566Z",
+      "services": {
+        "cardCashIn": "awec",
+        "cardCashOut": "ahipojalalni",
+        "cardPayments": "jinwitakni",
+        "cashIn": "kitufagsudeasu",
+        "cashOut": "joiki",
+        "payments": "hihukveozap"
+      },
+      "supportInfo": {
+        "email": "hivu@ta.ee",
+        "other": "gizluhecom",
+        "phone": "(553) 467-9523"
+      },
+      "timeAccess": {
+        "mode": "alltime",
+        "schedule": "otihis"
+      },
+      "timeShift": 91656488
+    },
+    {
+      "address": {
+        "city": "Beoreha",
+        "location": "http://gosgu.it/tu",
+        "mode": "KLADR"
+      },
+      "addressComments": "185 Patuke View",
+      "availablePaymentSystems": [
+        "wikevis",
+        "bigkak",
+        "gemabu"
+      ],
+      "cashInCurrencies": [
+        "linazad",
+        "abpim",
+        "maisc"
+      ],
+      "cashOutCurrencies": [
+        "uzpe",
+        "hazo",
+        "juvedwiv"
+      ],
+      "coordinates": {
+        "latitude": "-10.35503",
+        "longitude": "51.38036"
+      },
+      "deviceId": 56054887,
+      "nfc": "poranocl",
+      "publicAccess": "3528840646019477",
+      "recordUpdated": "2010-01-03T09:43:54.355Z",
+      "services": {
+        "cardCashIn": "puwaofgevuvpa",
+        "cardCashOut": "tokucw",
+        "cardPayments": "ditder",
+        "cashIn": "zofapisfota",
+        "cashOut": "rivhewzamhecv",
+        "payments": "guluakiav"
+      },
+      "supportInfo": {
+        "email": "di@kosiz.gg",
+        "other": "putazekhur",
+        "phone": "(448) 317-5974"
+      },
+      "timeAccess": {
+        "mode": "schedule",
+        "schedule": "duzwucovelhep"
+      },
+      "timeShift": 29036655
+    }
+  ],
+  "bankLicense": "cecmosnu"
+},
+"error": {
+"code": 40040593,
+"message": "22"
+},
+"success": false,
+"total": 61909944
+}

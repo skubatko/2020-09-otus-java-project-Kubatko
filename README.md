@@ -35,3 +35,25 @@ https://otus.ru/lessons/java-professional
 - Spring Boot 2+
 - REST, OpenAPI
 - опционально PostgreSQL, RabbitMQ/Kafka
+
+### Работа с приложением
+Доступ к Telegram-боту: http://t.me/atm_lookup_service_bot
+
+### Использованные материалы
+#### TelegramBot
+инструкция по созданию базового функционала для бота
+https://habr.com/ru/post/476306/
+
+#### API банкоматов
+https://api.alfabank.ru/node/237
+https://api.alfabank.ru/man_cert_rsa
+
+### Опции дебага
+для просмотра SSL
+-Djavax.net.debug=all
+
+### SSL
+#### получить crt из pfx
+openssl pkcs12 -in apidevelopers.pfx -clcerts -nokeys -out apidevelopers.crt
+#### сформировать keystore
+openssl pkcs12 -export -in apidevelopers.crt -inkey apidevelopers.key -certfile apidevelopers.crt  -out apidevelopers.p12

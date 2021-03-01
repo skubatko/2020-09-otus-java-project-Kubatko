@@ -1,5 +1,6 @@
 package ru.skubatko.dev.otus.java.telegram;
 
+import ru.skubatko.dev.otus.java.client.AtmClient;
 import ru.skubatko.dev.otus.java.config.TelegramBotProps;
 
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class AtmLookupTelegramBot extends TelegramLongPollingBot {
 
     private final TelegramBotProps props;
+    private final AtmClient atmClient;
 
     @Override
     public String getBotUsername() {
@@ -39,6 +41,8 @@ public class AtmLookupTelegramBot extends TelegramLongPollingBot {
             SendMessage message = new SendMessage();
             message.setChatId(chatId);
             message.setText("Hello. This is start message");
+            val atmsStatus = atmClient.getAtms();
+            log.trace("onUpdateReceived() - trace: number of atms = {}", atmsStatus.size());
             try {
                 execute(message);
             } catch (TelegramApiException e) {

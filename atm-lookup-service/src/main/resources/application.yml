@@ -9,6 +9,12 @@ app:
   telegram-bot:
     name:
     token:
+  atm-client:
+    id:
+    url: https://apiws.alfabank.ru/alfabank/alfadevportal/atm-service
+    connectionTimeout: 30000
+    readTimeout: 5000
+    keystore: ssl/apidevelopers.p12
 
 management:
   endpoints:
