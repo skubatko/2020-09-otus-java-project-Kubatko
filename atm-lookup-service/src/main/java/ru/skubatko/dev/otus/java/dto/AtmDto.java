@@ -24,10 +24,10 @@ public class AtmDto {
     public static class Coordinates {
 
         @JsonProperty("latitude")
-        private String latitude = EMPTY;
+        private Double latitude = Double.MIN_VALUE;
 
         @JsonProperty("longitude")
-        private String longitude = EMPTY;
+        private Double longitude = Double.MIN_VALUE;
     }
 
     @Data

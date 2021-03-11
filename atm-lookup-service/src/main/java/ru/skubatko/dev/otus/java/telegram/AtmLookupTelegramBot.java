@@ -62,6 +62,6 @@ public class AtmLookupTelegramBot extends TelegramLongPollingBot {
                 .map(handler -> handler.handle(receivedMessage))
                 .filter(StringUtils::isNotBlank)
                 .findAny()
-                .orElse(StringUtils.EMPTY);
+                .orElse("Nothing to say ...");
     }
 }
