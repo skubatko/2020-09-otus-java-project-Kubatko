@@ -57,3 +57,7 @@ https://api.alfabank.ru/man_cert_rsa
 openssl pkcs12 -in apidevelopers.pfx -clcerts -nokeys -out apidevelopers.crt
 #### сформировать keystore
 openssl pkcs12 -export -in apidevelopers.crt -inkey apidevelopers.key -certfile apidevelopers.crt  -out apidevelopers.p12
+
+### Развитие приложения
+* интеграция с Yandex картами, вычисление адреса по координатам
+* настройка CI/CD в github и деплой в heroku
