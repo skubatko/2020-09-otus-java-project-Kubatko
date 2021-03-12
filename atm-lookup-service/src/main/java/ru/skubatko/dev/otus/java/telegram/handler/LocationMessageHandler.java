@@ -55,7 +55,7 @@ public class LocationMessageHandler implements MessageHandler {
             }
 
             val nearestCoordinates = nearest.get().getCoordinates();
-            return String.format("Found the nearest ATM on location: longitude = %f, latitude = %f",
+            return String.format("https://yandex.ru/maps/?pt=%f,%f&z=18&l=map",
                     nearestCoordinates.getLongitude(), nearestCoordinates.getLatitude());
         }
 
