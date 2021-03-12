@@ -48,16 +48,27 @@ https://habr.com/ru/post/476306/
 https://api.alfabank.ru/node/237
 https://api.alfabank.ru/man_cert_rsa
 
-### Опции дебага
-для просмотра SSL
--Djavax.net.debug=all
+#### расстояние в километрах по координатам долготы и широты
+https://qna.habr.com/q/201431
+
+Формула "гаверсинуса":
+```
+const double R=6371;  // Earth's radius
+double sin1=sin((lat1-lat2)/2);
+double sin2=sin((lon1-lon2)/2);
+return 2*R*asin(sqrt(sin1*sin1+sin2*sin2*cos(lat1)*cos(lat2)));
+```
 
 ### SSL
 #### получить crt из pfx
 openssl pkcs12 -in apidevelopers.pfx -clcerts -nokeys -out apidevelopers.crt
 #### сформировать keystore
 openssl pkcs12 -export -in apidevelopers.crt -inkey apidevelopers.key -certfile apidevelopers.crt  -out apidevelopers.p12
+#### Опции дебага
+для просмотра SSL
+-Djavax.net.debug=all
 
 ### Развитие приложения
 * интеграция с Yandex картами, вычисление адреса по координатам
 * настройка CI/CD в github и деплой в heroku
+* настройка мониторинга приложения Prometheus/Grafana

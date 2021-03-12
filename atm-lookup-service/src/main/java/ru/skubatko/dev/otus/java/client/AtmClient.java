@@ -34,7 +34,8 @@ public class AtmClient {
             val response =
                     atmRestTemplate.exchange(
                             atmClientProps.getUrl() + "/atms",
-                            HttpMethod.GET, new HttpEntity<>(buildHeaders()),
+                            HttpMethod.GET,
+                            new HttpEntity<>(buildHeaders()),
                             String.class);
 
             val root = objectMapper.readTree(response.getBody());
