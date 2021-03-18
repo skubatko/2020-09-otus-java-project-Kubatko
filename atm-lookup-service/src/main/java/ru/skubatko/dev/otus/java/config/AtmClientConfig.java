@@ -25,8 +25,7 @@ public class AtmClientConfig {
         requestFactory.setConnectionRequestTimeout(props.getConnectionTimeout());
         requestFactory.setConnectTimeout(props.getConnectionTimeout());
         requestFactory.setReadTimeout(props.getReadTimeout());
-        return new RestTemplate(
-                requestFactory);
+        return new RestTemplate(requestFactory);
     }
 
     public HttpClient httpClient() {
