@@ -34,10 +34,12 @@ https://otus.ru/lessons/java-professional
 Технологический стек:
 - Spring Boot 2+
 - REST, OpenAPI
+- Heroku
 - опционально PostgreSQL, RabbitMQ/Kafka
 
 ### Работа с приложением
-Доступ к Telegram-боту: http://t.me/atm_lookup_service_bot
+- [Доступ к Telegram-боту](http://t.me/atm_lookup_service_bot) 
+- [Статус приложения](https://otus-java-project-kubatko.herokuapp.com/actuator/health)
 
 ### Использованные материалы
 #### TelegramBot
@@ -69,6 +71,6 @@ openssl pkcs12 -export -in apidevelopers.crt -inkey apidevelopers.key -certfile 
 -Djavax.net.debug=all
 
 ### Развитие приложения
++ настройка CI/CD в github и деплой в heroku
 * интеграция с Yandex картами, вычисление адреса по координатам
-* настройка CI/CD в github и деплой в heroku
 * настройка мониторинга приложения Prometheus/Grafana
