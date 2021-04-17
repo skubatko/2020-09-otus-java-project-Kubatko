@@ -6,6 +6,7 @@ import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 
 import ru.skubatko.dev.otus.java.client.AtmClient;
+import ru.skubatko.dev.otus.java.config.MapProps;
 import ru.skubatko.dev.otus.java.dto.AtmDto;
 
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 public class LocationMessageHandler implements MessageHandler {
 
     private final AtmClient atmClient;
+    private final MapProps mapProps;
 
     private static final String ATM_CASH_SERVICE_ON = "Y";
     private static final double EARTH_RADIUS = 6371;
@@ -41,7 +43,8 @@ public class LocationMessageHandler implements MessageHandler {
             val cashOutAtms = getCashOutAtms(atms);
             log.trace("handle() - trace: number of atms with cash-out = {}", cashOutAtms.size());
 
-            val nearest = cashOutAtms.stream()
+            val nearest =
+                cashOutAtms.stream()
                     .map(AtmDto::getCoordinates)
                     .min((o1, o2) -> {
                         val o1Lon = o1.getLongitude();
@@ -54,12 +57,13 @@ public class LocationMessageHandler implements MessageHandler {
                     });
 
             if (nearest.isEmpty()) {
-                return "";
+                return StringUtils.EMPTY;
             }
 
             val nearestCoordinates = nearest.get();
-            return String.format("https://yandex.ru/maps/?pt=%f,%f&z=18&l=map",
-                    nearestCoordinates.getLongitude(), nearestCoordinates.getLatitude());
+            val longitude = nearestCoordinates.getLongitude();
+            val latitude = nearestCoordinates.getLatitude();
+            return String.format(mapProps.getUrl(), longitude, latitude);
         }
 
         return StringUtils.EMPTY;
@@ -67,10 +71,10 @@ public class LocationMessageHandler implements MessageHandler {
 
     private List<AtmDto> getCashOutAtms(List<AtmDto> atms) {
         return atms.stream()
-                .filter(atmDto ->
-                        ATM_CASH_SERVICE_ON.equals(atmDto.getServices().getCardCashOut())
-                                && ATM_CASH_SERVICE_ON.equals(atmDto.getServices().getCashOut()))
-                .collect(Collectors.toList());
+                   .filter(atmDto ->
+                               ATM_CASH_SERVICE_ON.equals(atmDto.getServices().getCardCashOut())
+                                   && ATM_CASH_SERVICE_ON.equals(atmDto.getServices().getCashOut()))
+                   .collect(Collectors.toList());
     }
 
     private double getDistance(double lon1, double lat1, double lon2, double lat2) {

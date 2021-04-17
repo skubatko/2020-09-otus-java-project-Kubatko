@@ -14,7 +14,9 @@ app:
     url: https://apiws.alfabank.ru/alfabank/alfadevportal/atm-service
     connectionTimeout: 30000
     readTimeout: 5000
-    keystore: ssl/apidevelopers.p12
+    keystore: keystore/atm-keystore.p12
+  map:
+    url: https://yandex.ru/maps/?pt=%f,%f&z=18&l=map
 
 management:
   endpoints:
