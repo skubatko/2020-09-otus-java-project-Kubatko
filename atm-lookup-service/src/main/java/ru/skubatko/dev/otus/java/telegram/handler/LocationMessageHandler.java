@@ -5,9 +5,9 @@ import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 
-import ru.skubatko.dev.otus.java.client.AtmClient;
 import ru.skubatko.dev.otus.java.config.MapProps;
 import ru.skubatko.dev.otus.java.dto.AtmDto;
+import ru.skubatko.dev.otus.java.service.AtmService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,18 +16,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Slf4j
 @Component
 @RequiredArgsConstructor
 public class LocationMessageHandler implements MessageHandler {
 
-    private final AtmClient atmClient;
+    private final AtmService atmService;
     private final MapProps mapProps;
 
-    private static final String ATM_CASH_SERVICE_ON = "Y";
     private static final double EARTH_RADIUS = 6371;
 
     @Override
@@ -37,14 +33,8 @@ public class LocationMessageHandler implements MessageHandler {
             val userLat = message.getLocation().getLatitude();
             log.trace("handle() - trace: location: longitude = {}, latitude = {}", userLon, userLat);
 
-            val atms = atmClient.getAtms();
-            log.trace("handle() - trace: number of atms = {}", atms.size());
-
-            val cashOutAtms = getCashOutAtms(atms);
-            log.trace("handle() - trace: number of atms with cash-out = {}", cashOutAtms.size());
-
             val nearest =
-                cashOutAtms.stream()
+                atmService.getCashOutAtms().stream()
                     .map(AtmDto::getCoordinates)
                     .min((o1, o2) -> {
                         val o1Lon = o1.getLongitude();
@@ -67,14 +57,6 @@ public class LocationMessageHandler implements MessageHandler {
         }
 
         return StringUtils.EMPTY;
-    }
-
-    private List<AtmDto> getCashOutAtms(List<AtmDto> atms) {
-        return atms.stream()
-                   .filter(atmDto ->
-                               ATM_CASH_SERVICE_ON.equals(atmDto.getServices().getCardCashOut())
-                                   && ATM_CASH_SERVICE_ON.equals(atmDto.getServices().getCashOut()))
-                   .collect(Collectors.toList());
     }
 
     private double getDistance(double lon1, double lat1, double lon2, double lat2) {
