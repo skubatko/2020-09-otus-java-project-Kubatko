@@ -8,4 +8,5 @@ app:
 logging:
   level:
     root: INFO
+    web: DEBUG
     ru.skubatko.dev: TRACE
