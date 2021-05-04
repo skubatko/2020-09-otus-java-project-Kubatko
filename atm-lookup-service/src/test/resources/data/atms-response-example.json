@@ -1,0 +1,160 @@
+{
+  "data": {
+    "atms": [
+      {
+        "address": {
+          "city": "Ruewiho",
+          "location": "http://dubgiuc.az/zagsupu",
+          "mode": "HandMade"
+        },
+        "addressComments": "1193 Jagvir Terrace",
+        "availablePaymentSystems": [
+          "zudzudj",
+          "okurat",
+          "kiov"
+        ],
+        "cashInCurrencies": [
+          "ohupora",
+          "danti",
+          "kerwaze"
+        ],
+        "cashOutCurrencies": [
+          "jejfa",
+          "inuvuvge",
+          "noulusof"
+        ],
+        "coordinates": {
+          "latitude": "-6.89719",
+          "longitude": "-66.94075"
+        },
+        "deviceId": 92117892,
+        "nfc": "vaworjufm",
+        "publicAccess": "6334373903698392",
+        "recordUpdated": "2010-07-13T09:50:19.483Z",
+        "services": {
+          "cardCashIn": "fuciinoopga",
+          "cardCashOut": "tosozowuhow",
+          "cardPayments": "habc",
+          "cashIn": "oweca",
+          "cashOut": "wivuvacsi",
+          "payments": "gezebbesumifofu"
+        },
+        "supportInfo": {
+          "email": "saf@tah.in",
+          "other": "ojesidimabko",
+          "phone": "(232) 617-1531"
+        },
+        "timeAccess": {
+          "mode": "schedule",
+          "schedule": "fisunubesh"
+        },
+        "timeShift": 67092297
+      },
+      {
+        "address": {
+          "city": "Wismodmar",
+          "location": "http://rip.uz/ihbe",
+          "mode": "OtherDictionary"
+        },
+        "addressComments": "795 Jihca Point",
+        "availablePaymentSystems": [
+          "ecco",
+          "dulpoifp",
+          "kutnubr"
+        ],
+        "cashInCurrencies": [
+          "maildavo",
+          "vakgigha",
+          "jumjuhl"
+        ],
+        "cashOutCurrencies": [
+          "juvpaho",
+          "ferikfub",
+          "umuvis"
+        ],
+        "coordinates": {
+          "latitude": "-52.66545",
+          "longitude": "-10.97667"
+        },
+        "deviceId": 84660180,
+        "nfc": "owatagilahupk",
+        "publicAccess": "201410908456948",
+        "recordUpdated": "2007-10-18T01:37:49.934Z",
+        "services": {
+          "cardCashIn": "ipgacruebi",
+          "cardCashOut": "guutusaswav",
+          "cardPayments": "ufeiwje",
+          "cashIn": "vakeniwo",
+          "cashOut": "usselsazdiph",
+          "payments": "jisnu"
+        },
+        "supportInfo": {
+          "email": "zuzo@neras.tt",
+          "other": "wornivoisi",
+          "phone": "(984) 320-4062"
+        },
+        "timeAccess": {
+          "mode": "noinfo",
+          "schedule": "oveto"
+        },
+        "timeShift": 87736290
+      },
+      {
+        "address": {
+          "city": "Mamaezi",
+          "location": "http://rano.gh/fudzo",
+          "mode": "OtherDictionary"
+        },
+        "addressComments": "692 Wijec Glen",
+        "availablePaymentSystems": [
+          "zoke",
+          "gedoi",
+          "gowezida"
+        ],
+        "cashInCurrencies": [
+          "gohnikce",
+          "kufnili",
+          "wodubozd"
+        ],
+        "cashOutCurrencies": [
+          "nesvebuv",
+          "jucb",
+          "ozeigpe"
+        ],
+        "coordinates": {
+          "latitude": "-14.81287",
+          "longitude": "-84.23633"
+        },
+        "deviceId": 15209053,
+        "nfc": "hegivihibpej",
+        "publicAccess": "6334942532720429",
+        "recordUpdated": "2008-08-10T22:03:36.952Z",
+        "services": {
+          "cardCashIn": "uvakah",
+          "cardCashOut": "ojot",
+          "cardPayments": "sojaveikitiscib",
+          "cashIn": "isipoawvapm",
+          "cashOut": "fozt",
+          "payments": "pose"
+        },
+        "supportInfo": {
+          "email": "ticur@me.mt",
+          "other": "oskiigmepla",
+          "phone": "(801) 567-9280"
+        },
+        "timeAccess": {
+          "mode": "alltime",
+          "schedule": "mitipcekurli"
+        },
+        "timeShift": 53546131
+      }
+    ],
+    "bankLicense": "gepawu"
+  },
+  "error": {
+    "code": 78264922,
+    "message": "35"
+  },
+  "success": true,
+  "total": 93679340
+}

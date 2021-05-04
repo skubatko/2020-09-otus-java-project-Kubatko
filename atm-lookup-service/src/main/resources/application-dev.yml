@@ -1,0 +1,12 @@
+server:
+  port: 8180
+
+app:
+  cache:
+    refreshRateMs: 30000
+
+logging:
+  level:
+    root: INFO
+    web: DEBUG
+    ru.skubatko.dev: TRACE

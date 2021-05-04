@@ -1,0 +1,73 @@
+plugins {
+    id 'application'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+}
+
+group = rootProject.group
+description = 'ATM lookup service'
+version = '0.0.1'
+
+mainClassName = 'ru.skubatko.dev.otus.java.AtmLookupServiceApp'
+
+bootBuildImage {
+    imageName = "otus-projects/atm-lookup-service"
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+dependencies {
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    implementation "org.telegram:telegrambots-spring-boot-starter:${telegrambotsVersion}"
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+
+    implementation "org.apache.commons:commons-lang3:${apacheCommonsVersion}"
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+springBoot {
+    buildInfo()
+}
+
+test {
+    useJUnitPlatform {
+        excludeTags("it")
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+task integrationTest(type: Test) {
+    group "verification"
+    description "Integration tests"
+
+    useJUnitPlatform {
+        includeTags("it")
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
