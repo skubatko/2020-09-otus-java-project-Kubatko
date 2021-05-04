@@ -1,0 +1,38 @@
+plugins {
+    id 'idea'
+    id 'eclipse'
+    id 'org.springframework.boot' apply false
+    id 'io.spring.dependency-management' apply false
+}
+
+group = 'ru.skubatko.dev'
+description = 'library microservice'
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+        mavenCentral()
+        jcenter()
+    }
+
+    idea {
+        project {
+            languageLevel = javaVersion
+        }
+        module {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
+
+    sourceCompatibility = JavaVersion.toVersion(javaVersion)
+    targetCompatibility = JavaVersion.toVersion(javaVersion)
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+        options.compilerArgs = ['-Xlint:deprecation']
+    }
+}

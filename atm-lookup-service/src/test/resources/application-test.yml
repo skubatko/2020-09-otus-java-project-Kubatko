@@ -1,0 +1,10 @@
+spring:
+  main:
+    lazy-initialization: true
+
+app:
+  telegram-bot:
+    name: test-name
+    token: test-token
+  atm-client:
+    id: test-client

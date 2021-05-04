@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: atm-lookup-service
+
+app:
+  telegram-bot:
+    name:
+    token:
+  atm-client:
+    id:
+    url: https://apiws.alfabank.ru/alfabank/alfadevportal/atm-service
+    connectionTimeout: 30000
+    readTimeout: 5000
+    keystore: keystore/atm-keystore.p12
+  cache:
+    refreshRateMs: 3600000
+  map:
+    url: https://yandex.ru/maps/?pt=%f,%f&z=18&l=map
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - metrics
+          - prometheus
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      show-components: always
+  health:
+    defaults:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: ${spring.application.name}
+
+logging:
+  level:
+    root: WARN

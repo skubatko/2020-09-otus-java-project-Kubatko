@@ -1,0 +1,17 @@
+pluginManagement {
+    plugins {
+        id 'org.springframework.boot' version "${springBootVersion}"
+        id 'io.spring.dependency-management' version "${dependencyManagementVersion}"
+    }
+
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+rootProject.name = '2020-09-otus-java-project-Kubatko'
+
+include 'atm-lookup-service'
